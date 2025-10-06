@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "id": "u001",
+      "name": "Nadson Oliveira",
+      "email": "nadson@example.com",
+      "password": "hashed_password",
+      "subscription": {
+        "type": "premium",
+        "renewalDate": "2025-11-01"
+      },
+      "preferences": {
+        "language": "pt-BR",
+        "theme": "dark",
+        "genres": ["rock", "pop", "lofi"]
+      },
+      "following": ["a002", "a003"],
+      "playlists": ["p001", "p002"],
+      "history": ["t005", "t009", "t015"]
+    }
+  ],
+  "artists": [
+    {
+      "id": "a001",
+      "name": "Imagine Dragons",
+      "bio": "Banda americana de pop rock formada em Las Vegas.",
+      "genres": ["rock", "pop"],
+      "followers": ["u001"],
+      "albums": ["al001", "al002"]
+    },
+    {
+      "id": "a002",
+      "name": "Billie Eilish",
+      "bio": "Cantora e compositora americana conhecida por seu estilo alternativo.",
+      "genres": ["pop", "indie"],
+      "followers": ["u001"],
+      "albums": ["al003"]
+    }
+  ],
+  "albums": [
+    {
+      "id": "al001",
+      "title": "Evolve",
+      "artistId": "a001",
+      "releaseDate": "2017-06-23",
+      "coverUrl": "https://example.com/covers/evolve.jpg",
+      "tracks": ["t001", "t002", "t003"]
+    },
+    {
+      "id": "al003",
+      "title": "Happier Than Ever",
+      "artistId": "a002",
+      "releaseDate": "2021-07-30",
+      "coverUrl": "https://example.com/covers/happier-than-ever.jpg",
+      "tracks": ["t007", "t008", "t009"]
+    }
+  ],
+  "tracks": [
+    {
+      "id": "t001",
+      "title": "Believer",
+      "artistId": "a001",
+      "albumId": "al001",
+      "duration": 204,
+      "genre": "rock",
+      "url": "https://cdn.example.com/tracks/believer.mp3",
+      "likes": 1500000,
+      "plays": 45000000
+    },
+    {
+      "id": "t009",
+      "title": "Happier Than Ever",
+      "artistId": "a002",
+      "albumId": "al003",
+      "duration": 298,
+      "genre": "pop",
+      "url": "https://cdn.example.com/tracks/happier-than-ever.mp3",
+      "likes": 980000,
+      "plays": 25000000
+    }
+  ],
+  "playlists": [
+    {
+      "id": "p001",
+      "title": "Favoritas do Nadson",
+      "description": "Minhas músicas favoritas de todos os tempos",
+      "ownerId": "u001",
+      "tracks": ["t001", "t009", "t015"],
+      "isPublic": true,
+      "followers": 124,
+      "createdAt": "2025-09-01"
+    },
+    {
+      "id": "p002",
+      "title": "Lofi pra estudar",
+      "description": "Músicas tranquilas para focar no trabalho",
+      "ownerId": "u001",
+      "tracks": ["t010", "t011", "t012"],
+      "isPublic": false,
+      "followers": 12,
+      "createdAt": "2025-09-25"
+    }
+  ]
+}
