@@ -10,7 +10,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
 
   return (
-    <div className="flex items-center items-center justify-center h-screen w-screen bg-black">
+    <div className="flex items-center  justify-center h-screen w-screen bg-black">
       <div className="flex flex-col items-center justify-center w-150 h-150 p-35 rounded-2xl text-white shadow-lg">
         {/* Logo */}
         {/* <div className="flex items-center space-x-2 mb-30 mr-3">

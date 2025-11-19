@@ -14,8 +14,8 @@ export function Button({
   children,
   onClick,
   type = "button",
-  variant = "primary", // "primary", "secondary", "outline", "danger"
-  size = "md", // "sm", "md", "lg"
+  variant = "primary",
+  size = "md",
   loading = false,
   disabled = false,
   className = "",

@@ -12,7 +12,7 @@ export function Header() {
     setMessage("");
   };
   return (
-    <header className="  w-full h-16 bg-background text-white flex items-center px-4 border-b border-secodaryBackground flex flex-row justify-between ">
+    <header className="  w-full h-16 bg-background text-white  items-center px-4 border-b border-secodaryBackground flex flex-row justify-between ">
       <div className=" ml-150">
         <div>
           <Input
@@ -32,13 +32,14 @@ export function Header() {
         >
           Criar conta gratuita
         </Button>
-        <Button
-          onClick={() => alert("Perigo!")}
-          variant="primary"
-          className="mr-4 w-28 h-10 bg-primary text-white rounded-lg hover:bg-secondaryPrimary transition-colors cursor-pointer"
-        >
-          Entrar
-        </Button>
+        <a href="/auth/login">
+          <Button
+            variant="primary"
+            className="mr-4 w-28 h-10 bg-primary text-white rounded-lg hover:bg-secondaryPrimary transition-colors cursor-pointer"
+          >
+            Entrar
+          </Button>
+        </a>
       </div>
     </header>
   );
