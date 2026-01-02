@@ -8,6 +8,7 @@ type AvatarProps = {
   className?: string;
   src?: string;
   alt?: string;
+  ahref?: string; // novo
 };
 
 const sizeClasses = {
@@ -21,17 +22,16 @@ export function Avatar({
   onClick,
   size = "md",
   icon,
-  className,
+  className = "",
   src,
   alt = "Avatar",
+  ahref,
 }: AvatarProps) {
   const baseStyles =
     "rounded-full overflow-hidden flex items-center justify-center bg-gray-200 cursor-pointer";
 
-  const avatarClass = (sizeClasses[size], className);
-
-  return (
-    <div className={`${avatarClass} ${baseStyles} ${sizeClasses[size]}`} onClick={onClick}>
+  const avatarContent = (
+    <>
       {src ? (
         <img src={src} alt={alt} className="h-full w-full object-cover" />
       ) : icon ? (
@@ -39,6 +39,24 @@ export function Avatar({
       ) : (
         children
       )}
+    </>
+  );
+
+  const classes = `${className} ${baseStyles} ${sizeClasses[size]}`;
+
+  // Se tiver ahref, renderiza como link
+  if (ahref) {
+    return (
+      <a href={ahref} className={classes} onClick={onClick}>
+        {avatarContent}
+      </a>
+    );
+  }
+
+  // Caso contrário, renderiza como div
+  return (
+    <div className={classes} onClick={onClick}>
+      {avatarContent}
     </div>
   );
 }

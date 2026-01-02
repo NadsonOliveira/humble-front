@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/button";
 import { Input } from "@/components/input";
-import Image from "next/image";
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { FaApple } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
@@ -38,7 +38,10 @@ export default function LoginPage() {
           <div className="flex-grow h-px bg-neutral-700" />
         </div>
 
-        <Button className="flex items-center justify-center w-full  bg-white text-background font-medium py-3 rounded-xl mb-3 hover:bg-gray-100 transition cursor-pointer">
+        <Button
+          onClick={() => signIn("google", { callbackUrl: "/" })}
+          className="flex items-center justify-center w-full  bg-white text-background font-medium py-3 rounded-xl mb-3 hover:bg-gray-100 transition cursor-pointer"
+        >
           <FcGoogle className="w-5 h-5 mr-2" />
           Continuar com Google
         </Button>
